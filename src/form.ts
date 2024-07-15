@@ -1,12 +1,12 @@
-import { PRIORIDADES, CATEGORIAS } from './constantes/constantes'
-import { PrioridadeSelect, CategoriaSelect } from './types/constantesSelect'
+import { PRIORIDADES, CATEGORIAS } from './constantes/constantes.js'
+import { PrioridadeSelect, CategoriaSelect } from './types/constantesSelect.js'
 
 //Record é um tipo especial para setarmos um tipo de objeto / void é para funções que não tem retorno, normalmente não precisa por 
 export function criaOpcoesDoSelect(idSelecionado: string, opcoes: Record<string, PrioridadeSelect | CategoriaSelect>): void {
   if(!document) return
   const selectCampo = document.getElementById(idSelecionado) as HTMLSelectElement | null // o null é para tratar caso o elemento não seja encontrado
   if (!selectCampo || !selectCampo.checkValidity()) return // condicional para verificar se elemento não existe
-  const listaDeOpcoes = Object.value(opcoes)
+  const listaDeOpcoes = Object.values(opcoes)
   listaDeOpcoes.forEach((opcao) => {
     const elementoOpcao = document.createElement('option')
     elementoOpcao.innerText = opcao.texto

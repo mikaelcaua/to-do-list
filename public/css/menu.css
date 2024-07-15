@@ -48,17 +48,17 @@
   font-size: 12px;
 }
 
-.menu__social-media {
+.menu__social-medio {
   margin-top: 16px;
   display: flex;
   gap: 8px;
 }
 
-.menu__social-media--item {
+.menu__social-medio--item {
   transition: 0.45s;
 }
 
-.menu__social-media--item:hover {
+.menu__social-medio--item:hover {
   opacity: 0.6;
 }
 

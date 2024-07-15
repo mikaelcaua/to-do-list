@@ -1,7 +1,7 @@
-import { criaOpcoesDoSelect, limpaFormulario } from './form'
-import { enviaTarefa, listaTarefas } from './tarefas'
-import { PRIORIDADES, CATEGORIAS } from './constantes/constantes'
-import { mudaParaLightMode, mudaParaDarkMode } from './menu'
+import { criaOpcoesDoSelect, limpaFormulario } from './form.js'
+import { enviaTarefa, listaTarefas } from './tarefas.js'
+import { PRIORIDADES, CATEGORIAS } from './constantes/constantes.js'
+import { mudaParaLightMode, mudaParaDarkMode } from './menu.js'
 
 criaOpcoesDoSelect('prioridade', PRIORIDADES)
 criaOpcoesDoSelect('categoria', CATEGORIAS)

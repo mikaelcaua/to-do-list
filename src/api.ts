@@ -1,14 +1,14 @@
 import { TarefaDaLista } from './types/tarefaDaLista.js'
 
 export async function capturaTarefasDaAPI(): Promise<TarefaDaLista[]> {
-  const resposta = await fetch('http://localhost:3000/tasks')
+  const resposta = await fetch('http://localhost:3000/tarefas')
   const dadosConvertidos: TarefaDaLista[] = await resposta.json()
 
   return dadosConvertidos
 }
 
-export async function cadastraTarefaNaAPI(titulo: string, prioridade: string, descricao: string) {
-  const resposta = await fetch('http://localhost:3000/tasks', {
+export async function cadastraTarefaNaAPI(titulo: string, prioridade: string,categoria:string, descricao: string,data:string) {
+  const resposta = await fetch('http://localhost:3000/tarefas', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -16,7 +16,9 @@ export async function cadastraTarefaNaAPI(titulo: string, prioridade: string, de
     body: JSON.stringify({
       titulo: titulo,
       prioridade: prioridade,
+      categoria:categoria,
       descricao: descricao,
+      data:data
     }),
   })
 
@@ -26,7 +28,7 @@ export async function cadastraTarefaNaAPI(titulo: string, prioridade: string, de
 }
 
 export async function deletaTarefaNaAPI(id: string): Promise<void> {
-  await fetch(`http://localhost:3000/tasks/${id}`, {
+  await fetch(`http://localhost:3000/tarefas/${id}`, {
     method: 'DELETE',
   })
 }

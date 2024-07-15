@@ -21,21 +21,16 @@ export function limpaFormulario() {
     const descricao = document.querySelector('#descricao');
     const categoria = document.querySelector('#categoria');
     const data = document.querySelector('#data');
-    if (titulo) {
+    if (titulo)
         titulo.value = '';
-    }
-    if (prioridade) {
+    if (prioridade)
         prioridade.value = PRIORIDADES.alta.value;
-    }
-    if (descricao) {
+    if (descricao)
         descricao.value = '';
-    }
-    if (categoria) {
+    if (categoria)
         categoria.value = CATEGORIAS.pessoal.value;
-    }
-    if (data) {
+    if (data)
         data.value = '';
-    }
 }
 const botaoLimpar = document.querySelector('#botaoLimpar');
 if (botaoLimpar) {

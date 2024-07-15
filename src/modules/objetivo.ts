@@ -1,4 +1,4 @@
-import { ConstructorObjetivo } from '../types/constructorObjetivo'
+import { ConstructorObjetivo } from '../types/constructorObjetivo.js'
 
 export class Objetivo {
   titulo: string

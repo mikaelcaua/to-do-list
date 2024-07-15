@@ -1,16 +1,16 @@
-import { PrioridadeSelect, CategoriaSelect } from '../types/constantesSelect'
+import { PrioridadeSelect, CategoriaSelect } from '../types/constantesSelect.js'
 
 export const PRIORIDADES: Record<string, PrioridadeSelect> = {
   alta: {
-    texto: 'alta',
+    texto: 'Alta',
     value: 'alta',
   },
-  media: {
-    texto: 'media',
-    value: 'media',
+  medio: {
+    texto: 'Médio',
+    value: 'medio',
   },
   baixa: {
-    texto: 'baixa',
+    texto: 'Baixa',
     value: 'baixa',
   },
 }
@@ -22,11 +22,11 @@ export const CATEGORIAS: Record<string, CategoriaSelect> = {
   },
   familia: {
     texto: 'Família',
-    value: 'família',
+    value: 'familia',
   },
   saude: {
     texto: 'Saúde',
-    value: 'saúde',
+    value: 'saude',
   },
   estudos: {
     texto: 'Estudos',

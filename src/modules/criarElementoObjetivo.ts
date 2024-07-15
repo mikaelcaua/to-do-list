@@ -1,5 +1,5 @@
-import { ConstructorObjetivo } from '../types/constructorObjetivo'
-import { Objetivo } from './objetivo'
+import { ConstructorObjetivo } from '../types/constructorObjetivo.js'
+import { Objetivo } from './objetivo.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const formularioObjetivos = document.querySelector('#objetivoForm') as HTMLFormElement | null

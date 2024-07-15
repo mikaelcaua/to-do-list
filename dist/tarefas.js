@@ -8,26 +8,33 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { cadastraTarefaNaAPI, capturaTarefasDaAPI, deletaTarefaNaAPI } from './api.js';
-import { PRIORIDADES } from './constantes/constantes.js';
+import { PRIORIDADES, CATEGORIAS } from './constantes/constantes.js';
 export function enviaTarefa(e) {
     e.preventDefault();
     const titulo = document.querySelector('#titulo').value;
     const prioridade = document.querySelector('#prioridade').value;
     const descricao = document.querySelector('#descricao').value;
-    cadastraTarefaNaAPI(titulo, prioridade, descricao);
+    const categoria = document.querySelector('#categoria').value;
+    const data = document.querySelector('#data').value;
+    const dataFormatada = new Date(data).toLocaleDateString('pt-br', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    });
+    cadastraTarefaNaAPI(titulo, prioridade, categoria, descricao, dataFormatada);
 }
-function criarTarefa(id, titulo, prioridade, descricao) {
+function criarTarefa(id, titulo, prioridade, categoria, descricao, data) {
     const tarefa = document.createElement('li');
-    tarefa.classList.add('listaDeTarefa__tarefa');
+    tarefa.classList.add('listaTarefa__tarefa');
     tarefa.id = id;
-    const prioridadeCor = `tarefa__prioridade--${PRIORIDADES[prioridade]}`;
-    console.log(PRIORIDADES[prioridade], prioridade)
+    console.log(data);
+    const prioridadeCor = `tarefa__prioridade--${PRIORIDADES[prioridade].value}`;
     tarefa.innerHTML = `
-  <div class="tarefa__info--column">
+   <div class="tarefa__info--column">
     <div class="tarefa__info--row">
-      <div class="task__prioridade ${prioridadeCor}">${PRIORIDADES[prioridade]}</div>
-      <div class="tarefa__category"></div>
-      <div class="tarefa__date"></div>
+      <div class="tarefa__prioridade ${prioridadeCor}">${PRIORIDADES[prioridade].texto}</div>
+      <div class="tarefa__categoria">${CATEGORIAS[categoria].texto}</div>
+      <div class="tarefa__data">${data}</div>
     </div>
     <div class="tarefa__info--row">
       <div class="tarefa__titulo">${titulo}</div>
@@ -92,14 +99,13 @@ function criarTarefa(id, titulo, prioridade, descricao) {
 }
 export function listaTarefas() {
     return __awaiter(this, void 0, void 0, function* () {
-        const listaDeTarefa = document.getElementById('taskList');
+        const listaDeTarefa = document.getElementById('listaTarefa');
         if (!listaDeTarefa) {
             return;
         }
         const tarefas = yield capturaTarefasDaAPI();
         tarefas.forEach((element) => {
-            console.log(element);
-            const elementoTarefa = criarTarefa(element.id, element.titulo, element.prioridade, element.descricao);
+            const elementoTarefa = criarTarefa(element.id, element.titulo, element.prioridade, element.categoria, element.descricao, element.data);
             listaDeTarefa.appendChild(elementoTarefa);
         });
         const botoesDeDeletar = document.querySelectorAll('.tarefa__delete');
@@ -112,7 +118,7 @@ export function listaTarefas() {
     });
 }
 export function removeTarefa(id) {
-    return __await (this, void 0, void 0, function* () {
+    return __awaiter(this, void 0, void 0, function* () {
         yield deletaTarefaNaAPI(id);
         const tarefaParaDeletar = document.getElementById(id);
         if (tarefaParaDeletar) {

@@ -1,22 +1,3 @@
 {
-  "tasks": [
-    {
-      "titulo": "Tarefa 1",
-      "prioridade": "alta",
-      "descricao": "blablablabla",
-      "id": 1
-    },
-    {
-      "titulo": "Tarefa 2",
-      "prioridade": "medio",
-      "descricao": "blablablabla",
-      "id": 2
-    },
-    {
-      "id": "ec4a",
-      "titulo": "qweqweqwe",
-      "prioridade": "alta",
-      "descricao": "23123123"
-    }
-  ]
+  "tarefas": []
 }
