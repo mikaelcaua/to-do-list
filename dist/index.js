@@ -1,0 +1,15 @@
+import { criaOpcoesDoSelect, limpaFormulario } from './form.js';
+import { enviaTarefa, listaTarefas } from './tarefas.js';
+import { PRIORIDADES, CATEGORIAS } from './constantes/constantes.js';
+import { mudaParaLightMode, mudaParaDarkMode } from './menu.js';
+criaOpcoesDoSelect('prioridade', PRIORIDADES);
+criaOpcoesDoSelect('categoria', CATEGORIAS);
+listaTarefas();
+const formularioTarefas = document.querySelector('#formularioTarefas');
+formularioTarefas === null || formularioTarefas === void 0 ? void 0 : formularioTarefas.addEventListener('submit', (e) => enviaTarefa(e));
+const botaoLimpar = document.querySelector('#botaoLimpar');
+botaoLimpar === null || botaoLimpar === void 0 ? void 0 : botaoLimpar.addEventListener('click', limpaFormulario);
+const botaoLightMode = document.querySelector('.botoes-mode--light');
+botaoLightMode === null || botaoLightMode === void 0 ? void 0 : botaoLightMode.addEventListener('click', mudaParaLightMode);
+const botaoDarkMode = document.querySelector('.botoes-mode--dark');
+botaoDarkMode === null || botaoDarkMode === void 0 ? void 0 : botaoDarkMode.addEventListener('click', mudaParaDarkMode);

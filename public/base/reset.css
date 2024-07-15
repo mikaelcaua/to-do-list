@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: var(--poppins-font);
+  font-size: 16px;
+  font-weight: unset;
+  color: var(--black);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: unset;
+  cursor: pointer;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+svg {
+  display: block;
+}
+
+::placeholder {
+  color: var(--nobel);
+  font-size: 0.8rem;
+}
+
+fieldset {
+  border: none;
+}
+
+
+.container__conteudo {
+  max-width: var(--container-width-desktop);
+  width: 100%;
+  padding: var(--container-padding);
+  margin: 0 auto;
+}
