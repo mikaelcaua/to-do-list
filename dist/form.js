@@ -1,11 +1,10 @@
 import { PRIORIDADES, CATEGORIAS } from './constantes/constantes.js';
-//Record é um tipo especial para setarmos um tipo de objeto / void é para funções que não tem retorno, normalmente não precisa por 
 export function criaOpcoesDoSelect(idSelecionado, opcoes) {
     if (!document)
         return;
-    const selectCampo = document.getElementById(idSelecionado); // o null é para tratar caso o elemento não seja encontrado
+    const selectCampo = document.getElementById(idSelecionado);
     if (!selectCampo || !selectCampo.checkValidity())
-        return; // condicional para verificar se elemento não existe
+        return;
     const listaDeOpcoes = Object.values(opcoes);
     listaDeOpcoes.forEach((opcao) => {
         const elementoOpcao = document.createElement('option');
@@ -15,7 +14,6 @@ export function criaOpcoesDoSelect(idSelecionado, opcoes) {
     });
 }
 export function limpaFormulario() {
-    // todos os nulls aqui é pelo menos motivo da linha 7, e as condicionais verificadoras estão da linha 26 a 30
     const titulo = document.querySelector('#titulo');
     const prioridade = document.querySelector('#prioridade');
     const descricao = document.querySelector('#descricao');

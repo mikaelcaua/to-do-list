@@ -1,11 +1,11 @@
 import { PRIORIDADES, CATEGORIAS } from './constantes/constantes.js'
 import { PrioridadeSelect, CategoriaSelect } from './types/constantesSelect.js'
 
-//Record é um tipo especial para setarmos um tipo de objeto / void é para funções que não tem retorno, normalmente não precisa por 
+ 
 export function criaOpcoesDoSelect(idSelecionado: string, opcoes: Record<string, PrioridadeSelect | CategoriaSelect>): void {
   if(!document) return
-  const selectCampo = document.getElementById(idSelecionado) as HTMLSelectElement | null // o null é para tratar caso o elemento não seja encontrado
-  if (!selectCampo || !selectCampo.checkValidity()) return // condicional para verificar se elemento não existe
+  const selectCampo = document.getElementById(idSelecionado) as HTMLSelectElement | null 
+  if (!selectCampo || !selectCampo.checkValidity()) return 
   const listaDeOpcoes = Object.values(opcoes)
   listaDeOpcoes.forEach((opcao) => {
     const elementoOpcao = document.createElement('option')
@@ -16,7 +16,7 @@ export function criaOpcoesDoSelect(idSelecionado: string, opcoes: Record<string,
 }
 
 export function limpaFormulario(): void {
-  // todos os nulls aqui é pelo menos motivo da linha 7, e as condicionais verificadoras estão da linha 26 a 30
+
   const titulo = document.querySelector('#titulo') as HTMLInputElement | null
   const prioridade = document.querySelector('#prioridade') as HTMLSelectElement | null
   const descricao = document.querySelector('#descricao') as HTMLTextAreaElement | null
