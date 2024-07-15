@@ -1,15 +1,15 @@
 export const PRIORIDADES = {
     alta: {
-        texto: 'Alta',
-        value: 'Alta',
+        texto: 'alta',
+        value: 'alta',
     },
     media: {
-        texto: 'Média',
-        value: 'Média',
+        texto: 'media',
+        value: 'media',
     },
     baixa: {
-        texto: 'Baixa',
-        value: 'Baixa',
+        texto: 'baixa',
+        value: 'baixa',
     },
 };
 export const CATEGORIAS = {

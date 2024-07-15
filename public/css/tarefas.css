@@ -54,11 +54,11 @@
   background-color: var(--flush-mahogany);
 }
 
-.task__prioridade--medium {
-  background-color: var(--yellow-orange);
+.task__prioridade--medio {
+  background-color: var(--yelbaixa-orange);
 }
 
-.task__priority--low {
+.task__prioridade--baixa {
   background-color: var(--sushi);
 }
 

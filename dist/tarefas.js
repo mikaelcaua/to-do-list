@@ -21,10 +21,11 @@ function criarTarefa(id, titulo, prioridade, descricao) {
     tarefa.classList.add('listaDeTarefa__tarefa');
     tarefa.id = id;
     const prioridadeCor = `tarefa__prioridade--${PRIORIDADES[prioridade]}`;
+    console.log(PRIORIDADES[prioridade], prioridade)
     tarefa.innerHTML = `
   <div class="tarefa__info--column">
     <div class="tarefa__info--row">
-      <div class="task__priority ${prioridadeCor}">${PRIORIDADES[prioridade]}</div>
+      <div class="task__prioridade ${prioridadeCor}">${PRIORIDADES[prioridade]}</div>
       <div class="tarefa__category"></div>
       <div class="tarefa__date"></div>
     </div>

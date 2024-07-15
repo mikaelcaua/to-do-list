@@ -24,7 +24,7 @@ function criarTarefa(
   const tarefa = document.createElement('li')
   tarefa.classList.add('listaDeTarefa__tarefa')
   tarefa.id = id
-
+  //
   const prioridadeCor = `tarefa__prioridade--${PRIORIDADES[prioridade].value}`
 
   tarefa.innerHTML = `
