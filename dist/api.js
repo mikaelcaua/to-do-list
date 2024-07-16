@@ -9,14 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export function capturaTarefasDaAPI() {
     return __awaiter(this, void 0, void 0, function* () {
-        const resposta = yield fetch('http://localhost:3000/tarefas');
+        const resposta = yield fetch('http://localhost:3000/tarefasApi');
         const dadosConvertidos = yield resposta.json();
         return dadosConvertidos;
     });
 }
 export function cadastraTarefaNaAPI(titulo, prioridade, categoria, descricao, data) {
     return __awaiter(this, void 0, void 0, function* () {
-        const resposta = yield fetch('http://localhost:3000/tarefas', {
+        const resposta = yield fetch('http://localhost:3000/tarefasApi', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -35,8 +35,34 @@ export function cadastraTarefaNaAPI(titulo, prioridade, categoria, descricao, da
 }
 export function deletaTarefaNaAPI(id) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield fetch(`http://localhost:3000/tarefas/${id}`, {
+        yield fetch(`http://localhost:3000/tarefasApi/${id}`, {
             method: 'DELETE',
         });
+    });
+}
+export function cadastraObjetivoNaAPI(titulo, categoria, statusObj, descricao, imagem) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const resposta = yield fetch('http://localhost:3000/objetivosApi', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                titulo: titulo,
+                statusObj: statusObj,
+                categoria: categoria,
+                descricao: descricao,
+                imagem: imagem
+            }),
+        });
+        const respostaConvertida = yield resposta.json();
+        return respostaConvertida;
+    });
+}
+export function capturaObjetivosDaAPI() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const resposta = yield fetch('http://localhost:3000/objetivosApi');
+        const dadosConvertidos = yield resposta.json();
+        return dadosConvertidos;
     });
 }

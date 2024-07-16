@@ -6,11 +6,11 @@ export class Objetivo {
         this.descricao = descricao;
         this.imagem = imagem;
     }
-    mudarBackgroundColor() {
-        if (this.statusObj === 'Concluído') {
+    static mudarBackgroundColor(statusObj) {
+        if (statusObj === 'Concluído') {
             return 'container__objetivo--concluido';
         }
-        else if (this.statusObj === 'Andamento') {
+        else if (statusObj === 'Andamento') {
             return 'container__objetivo--andamento';
         }
         else {

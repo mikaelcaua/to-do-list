@@ -15,10 +15,10 @@ export class Objetivo {
     this.imagem = imagem
   }
 
-  mudarBackgroundColor(): string {
-    if (this.statusObj === 'Concluído') {
+  static mudarBackgroundColor(statusObj:string): string {
+    if (statusObj === 'Concluído') {
       return 'container__objetivo--concluido'
-    } else if (this.statusObj === 'Andamento') {
+    } else if (statusObj === 'Andamento') {
       return 'container__objetivo--andamento'
     } else {
       return 'container__objetivo--iniciar'
