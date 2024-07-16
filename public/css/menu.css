@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  overfbaixa: hidden;
+  overflow: hidden;
   transform: translateX(-68%);
   transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
 }
